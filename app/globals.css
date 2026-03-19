@@ -24,3 +24,85 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Subtle steam animation for the chai cup */
+@keyframes steam-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(8px) scaleX(1);
+  }
+  40% {
+    opacity: 0.9;
+    transform: translateY(-6px) scaleX(1.05);
+  }
+  80% {
+    opacity: 0.4;
+    transform: translateY(-18px) scaleX(1.08);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-26px) scaleX(1.1);
+  }
+}
+
+.steam {
+  animation: steam-rise 4s ease-in-out infinite;
+}
+
+.steam-delay-1 {
+  animation-delay: 0.8s;
+}
+
+.steam-delay-2 {
+  animation-delay: 1.4s;
+}
+
+@keyframes hero-chai-enter {
+  0% {
+    opacity: 0;
+    transform: translateY(100px) scale(0.9) rotate(3deg);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(-6px) scale(1.02) rotate(1deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotate(0deg);
+  }
+}
+
+.hero-chai-enter {
+  animation: hero-chai-enter 900ms cubic-bezier(0.16, 0.84, 0.25, 1) both;
+}
+
+@keyframes hero-steam-rise {
+  0% {
+    opacity: 0;
+    transform: translateY(8px) scaleX(1);
+  }
+  30% {
+    opacity: 0.6;
+    transform: translateY(-4px) scaleX(1.02);
+  }
+  70% {
+    opacity: 0.2;
+    transform: translateY(-16px) scaleX(1.04);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-24px) scaleX(1.06);
+  }
+}
+
+.hero-steam {
+  animation: hero-steam-rise 4.4s ease-in-out infinite;
+}
+
+.hero-steam-delay-1 {
+  animation-delay: 0.9s;
+}
+
+.hero-steam-delay-2 {
+  animation-delay: 1.6s;
+}
