@@ -1,8 +1,8 @@
-import HeroChai from "./HeroChai";
+import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="section1 relative h-screen flex items-center bg-linear-to-b from-[#f8f1e9] via-[#fdf7f0] to-[#f1e2d2] overflow-hidden">
+    <section className="relative h-screen flex items-center bg-linear-to-b from-[#f8f1e9] via-[#fdf7f0] to-[#f1e2d2] overflow-hidden">
       {/* Background organic shapes */}
       <div className="pointer-events-none absolute -left-32 -top-40 h-80 w-80 rounded-full bg-[#f0dac0] blur-3xl opacity-50" />
       <div className="pointer-events-none absolute right-[-80px] top-24 h-72 w-72 rounded-full bg-[#e2c3a0] blur-3xl opacity-40" />
@@ -39,9 +39,18 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right: premium kulhad presentation, animation-ready */}
+          {/* Right: static plate — kulhad is positioned over this via the fixed GSAP layer */}
           <div className="relative flex h-[420px] items-center justify-center">
-            <HeroChai />
+            <div className="relative z-10 drop-shadow-[0_14px_28px_rgba(0,0,0,0.18)]">
+              <Image
+                src="/assests/Hero-plate.png"
+                alt="Chai plate with spices"
+                width={1200}
+                height={500}
+                className="select-none w-[90vw] max-w-[1000px] h-auto"
+                priority
+              />
+            </div>
           </div>
         </div>
       </div>
