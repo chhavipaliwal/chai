@@ -28,6 +28,7 @@ export default function HeroChai() {
           width={300}
           height={360}
           className="w-[180px] md:w-[220px] h-auto"
+          loading="eager"
         />
 
         {/* Steam */}

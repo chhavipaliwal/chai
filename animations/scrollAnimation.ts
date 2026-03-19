@@ -3,7 +3,14 @@
 export async function initScrollAnimation() {
   if (typeof window === "undefined") return;
 
-  const chai = document.querySelector<HTMLElement>(".chai");
+  // Wait briefly for the hero + chai cup to hydrate
+  let chai: HTMLElement | null = null;
+  for (let i = 0; i < 5 && !chai; i += 1) {
+    chai = document.querySelector<HTMLElement>(".section1 .chai");
+    if (!chai) {
+      await new Promise((resolve) => setTimeout(resolve, 80));
+    }
+  }
 
   if (!chai) return;
 
